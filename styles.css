@@ -1,0 +1,153 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  padding: 20px;
+}
+
+header h1 {
+  font-size: 2.5em;
+  color: #333;
+  text-align: center;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  margin-bottom: 50px;
+}
+
+.hidden {
+  display: none;
+}
+
+.alphabet-box {
+  display: grid;
+  grid-template-columns: repeat(3, 60px); /* 3 boxes per row */
+  gap: 20px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.alphabet-box .letter-link {
+  text-decoration: none;
+}
+
+.alphabet-box .letter-box {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  border-radius: 8px;
+  background-color: #ffda79;
+  color: #333;
+  font-size: 1.2em;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.alphabet-box .letter-link:hover .letter-box {
+  background-color: #ff9a62;
+  color: #fff;
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.alphabet-box .letter-link:active .letter-box {
+  transform: scale(1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.content-link {
+  display: block;
+  font-size: 1.2em;
+  color: #ff9a62;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.content-link:hover {
+  text-decoration: underline;
+}
+
+#content-container {
+  border: 0;
+  position:absolute;
+  top:0;
+  left:0;
+  background-color: transparent;
+  width: 50%;
+  height: 50%;
+}
+
+#content-text {
+  position: fixed;
+  top: 80%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2em;
+  font-weight: bold;
+  color: #333;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(5);
+    opacity: 1;
+  }
+}
+
+.zoom-in {
+  animation: zoomIn 1s ease-out forwards;
+}
+
+#back-button {
+  padding: 10px 20px;
+  font-size: 1em;
+  font-weight: bold;
+  color: #fff;
+  background-color: #ff9a62;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  position: absolute;
+  top: 1%;
+  left: 1%;
+}
+
+#back-button:hover {
+  background-color: #ff7850;
+}
